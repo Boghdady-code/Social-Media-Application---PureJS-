@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Details</title>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .post-comments {
+      background-color: #f6f6f6e2;
+      padding: 10px;
+    }
+
+    .post-comments .comment-info {
+      display: flex;
+      align-items: center;
+    }
+    .post-comments .comment-info img {
+      width: 32px;
+      margin-right: 5px;
+    }
+
+    .post-comments .comment-info p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .post-comments .comment-content p {
+      margin: 0;
+    }
+    .create-comment {
+      width: 100%;
+      gap: 10px;
+      padding: 10px;
+      display: flex;
+
+    }
+    .create-comment input {
+      width: 100%;
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      
+    }
+
+    /* .create-comment button {
+
+     
+    } */
+
+
+  </style>
+</head>
+  <body>
+    <div class="alert">
+      <div class="alert-body">
+    
+        <!-- <h1>Username or Password are incorrect</h1> -->
+        <i class="fa-solid fa-x"></i>
+      </div>
+    </div>
+    <div class="splash">
+      <div class="login-form">
+        <label for="input-login">Username:</label>
+        <input type="text" name="" id="input-login" required>
+        <label for="password-login">Password:</label>
+        <input type="password" name="" id="password-login" required>
+        <button class="btn btn-primary login-button">Login</button>
+        <button class="btn btn-danger close-button">Close</button>
+      </div>
+      <div class="register-form">
+        <label for="register-username">Username:</label>
+        <input type="text" name="" id="register-username">
+        <label for="register-password">Password:</label>
+        <input type="password" name="" id="register-password">
+        <label for="register-name">Name:</label>
+        <input type="text" name="" id="register-name">
+        <label for="register-email">Email:</label>
+        <input type="email" name="" id="register-email">
+        <label for="register-image">Image:</label>
+        <input type="file" id="register-image">
+        <button class="btn btn-primary register-button">Register</button>
+        <button class="btn btn-danger close-button">Close</button>
+      </div>
+    </div>  
+    <div class="container">
+          <div class="heading bg-white d-flex p-2 align-items-center rounded shadow fw-bold ">
+            <div class="logo flex-fill">LOGO</div>
+            <ul class="links d-flex gap-5 flex-fill m-0">
+              <li class="active"><a href="index.html" class="text-decoration-none">Home</a></li>
+              <li><a href="#" class="text-decoration-none text-secondary">Profile</a></li>
+            </ul>
+            <div class="buttons flex-fil flex-end">
+              <button class="btn btn-outline-primary login">Login</button>
+              <button class="btn btn-outline-primary register">Register</button>
+              <div class="logout-prop">
+                <img src="" alt="" class="person-image">
+                <p class="person-name"></p>
+                <button class="btn btn-outline-danger logout">Logout</button>
+              </div>
+            </div>
+          </div>
+          <div class="post-name mt-5">
+            <h1 class="post-author">
+              <span></span>
+              Post
+            </h1>
+          </div>
+          <div class="posts-container mt-5 ">
+                <!-- <div class="post-box bg-white rounded shadow ">
+                  <div class="person-info d-flex">
+                    <img src="images/man_4202843.png" alt="" class="rounded-circle">
+                    <div class="user-name">ahmedboghdady55</div>
+                  </div>
+                  <div class="post-body">
+                    <div class="post-image">
+                      <img src="images/01.jpg" alt="">
+                    </div>
+                    <div class="post-content">
+                      <span class="post-time">1 day ago</span>
+                      <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ab harum inventore nesciunt.
+                        Maxime voluptate culpa odit itaque alias asperiores blanditiis, excepturi quasi distinctio voluptas, possimus
+                        similique sed iusto a.</p>
+                    </div>
+                    <div class="comments">
+                      <i class="fa-regular fa-comments"></i>
+                      <span>(3) Comments</span>
+                      <span class="tags rounded">Social</span>
+                    </div>
+                  </div>
+                  <div class="post-comments">
+                    <div class="comment-info">
+                      <img src="images/man_4202843.png" alt="">
+                      <p>@ahmed</p>
+                    </div>
+                    <div class="comment-content">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat minus perspiciatis ad dolor, vitae exercitationem, at dignissimos a nobis quos id praesentium earum totam facilis, voluptatum nostrum hic laboriosam necessitatibus!</p>
+
+                    </div>
+                  </div>
+                  
+
+                </div> -->
+                <!-- <div class="create-comment">
+                  <input type="text" name="" id="create-comment" placeholder="Write a comment">
+                  <button class="btn btn-primary create-comment-button">Send</button>
+                </div>
+          -->
+          
+          </div>
+    </div>
+
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="sharedlogic.js"></script>
+    <script>
+      let urlParams = new URLSearchParams(window.location.search);
+      let id = urlParams.get('postId');
+      console.log (id);
+      function getComments () {
+              fetch(`https://tarmeezacademy.com/api/v1/posts/${id}`)
+          .then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+          }).then(json => {
+            let postTitle = "";
+            let post = json.data;
+            let comments = json.data.comments;
+
+            if (post.title != null) {
+              postTitle = post.title;
+            }
+
+            let commentContent = ``
+
+            comments.forEach(function (comment) {
+              commentContent += `
+              <div class="post-comments">
+                    <div class="comment-info">
+                      <img src="${comment.author.profile_image}" alt="">
+                      <p>${comment.author.username}</p>
+                    </div>
+                    <div class="comment-content">
+                      <p>${comment.body}</p>
+
+                    </div>
+
+                </div>
+            `
+            })
+
+
+            let content = `
+            <div class="post-box bg-white rounded shadow" style="cursor:default;"">
+          <div class="person-info d-flex border-bottom">
+            <img src="${post.author.profile_image}" alt="" class="rounded-circle">
+            <div class="user-name">@${post.author.name}</div>
+          </div>
+          <div class="post-body mt-1">
+            <div class="post-image">
+              <img src="${post.image}" alt="">
+            </div>
+            <div class="post-content">
+              <span class="post-time">${post.created_at}</span>
+              <h6 class="post-title">${postTitle}</h6>
+              <p class="post-text">${post.body}</p>
+            </div>
+            <div class="comments border-top">
+              <i class="fa-regular fa-comments"></i>
+              <span>(${post.comments_count}) Comments</span> 
+              <span class="tags-${post.id}"></span>
+            </div>
+          </div>
+            ${commentContent}
+          <div class="create-comment" id="create-comment-holder">
+                  <input type="text" name="" id="create-comment" placeholder="Write a comment">
+                  <button class="btn btn-primary create-comment-button" onclick="addComment(${post.id})">Send</button>
+                </div>        
+
+        </div>
+            `
+
+            document.querySelector(".post-name .post-author span").innerHTML = `${post.author.name}'`;
+
+            postsContainer.innerHTML = content;
+
+
+          })
+      }
+
+      getComments();
+
+
+        function addComment (id) {
+          let bodyInput = document.getElementById("create-comment").value; 
+          let token = localStorage.getItem("token");
+          fetch(`https://tarmeezacademy.com/api/v1/posts/${id}/comments`,
+            {
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                "authorization": `Bearer ${token}`
+              },
+              method: "POST",
+              body: JSON.stringify({"body": bodyInput})
+            })
+            .then(response => response.json())
+            .then(response => {
+              
+              getComments();
+              alertSettings ("Comment created successfully" , "green");
+              setTimeout(() => {
+                alert.style.display = "none";
+                heading.innerHTML = " ";
+              }, "1000");
+
+            })
+        }
+      addComment();
+
+
+            
+    </script>
+  </body>
+</html>

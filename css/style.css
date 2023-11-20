@@ -1,0 +1,382 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #ededed;
+  position: relative;
+}
+
+.heading {
+  border: 1px solid #ccc;
+}
+
+.heading .links {
+  list-style: none;
+  
+}
+
+
+
+.container .heading .links li.active,
+.container .heading .links li a:hover {
+  color: rgba(0, 0, 255, 0.688) !important; 
+}
+
+
+
+.posts-container .person-info {
+  gap: 5px;
+  padding: 8px;
+  align-items: center;
+}
+
+.posts-container .user-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.posts-container .post-box .post-body .comments span.tags span {
+  background-color: #ccc;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.posts-container .post-box {
+  margin-bottom: 20px;
+  cursor: pointer;
+
+}
+
+.posts-container .person-info img {
+  width: 32px;
+  height: 32px;
+}
+
+
+.posts-container .post-body .post-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.post-body .post-image img {
+  max-width: 100%;
+
+  
+}
+
+.post-body .post-content {
+  margin-top: 5px;
+  padding: 8px;
+}
+
+
+.post-body .post-content .post-time {
+  color: #777;
+  
+}
+
+.post-body .post-content .post-text {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.post-body .comments {
+  padding: 8px;
+  font-weight: bold;
+}
+
+.splash {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99999999;
+  background-color: rgba(119, 119, 119, 0.576);
+  display: none;
+  
+
+}
+
+.login-form {
+  position: absolute;
+  top:2px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  background-color: #edebeb;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  width: 50%;
+  display: none;
+  
+
+}
+
+
+
+.login-form input {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+
+}
+
+.login-form button {
+  margin-top: 10px;
+  float: right;
+  margin-right: 5px;
+}
+
+.container .heading .buttons .logout-prop {
+  display: none;
+  align-items: center;
+
+}
+
+
+.logout-prop .person-image {
+  width: 32px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+}
+
+.logout-prop .person-name {
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+.alert {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 0, 0, 0.733);
+  width: 350px;
+  display: none;
+  transition: display 0.3s;
+  -webkit-transition: display 0.3s;
+  -moz-transition: display 0.3s;
+  -ms-transition: display 0.3s;
+  -o-transition: display 0.3s;
+}
+
+.alert .alert-body {
+  padding: 10px;
+}
+
+.alert .alert-body h1 {
+  font-size: 15px;
+  color: white;
+}
+
+.alert .alert-body i{
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  top: 10px;
+  cursor: pointer;
+}
+
+.register-form {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  background-color: #edebeb;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  width: 50%;
+  display: none;
+
+
+}
+
+.register-form input {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+
+}
+
+.register-form button {
+  margin-top: 10px;
+  float: right;
+  margin-right: 5px;
+}
+
+.add-post-button {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  padding: 15px;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  cursor: pointer;
+  
+}
+
+.create-post-form {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  background-color: #edebeb;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  width: 50%;
+  display: none;
+
+
+}
+
+.create-post-form input {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin-bottom: 10px;
+
+}
+
+.create-post-form textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  resize: none;
+
+}
+
+
+.create-post-form button {
+  margin-top: 10px;
+  float: right;
+  margin-right: 5px;
+}
+
+#edit-post-button {
+  color:#fff;
+  background-color: gray;
+  margin-left: auto;
+}
+
+
+.edit-form {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  background-color: #edebeb;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  width: 50%;
+  display: none;
+
+
+}
+
+.edit-form input {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin-bottom: 10px;
+
+}
+
+.edit-form textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  resize: none;
+
+}
+
+
+.edit-form button {
+  margin-top: 10px;
+  float: right;
+  margin-right: 5px;
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media</title>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="alert">
+    <div class="alert-body">
+      
+      <!-- <h1>Username or Password are incorrect</h1> -->
+      <i class="fa-solid fa-x"></i>
+    </div>
+  </div>
+  <div class="splash">
+    
+      <div class="login-form">
+        <label for="input-login">Username:</label>
+        <input type="text" name="" id="input-login" required>
+        <label for="password-login">Password:</label>
+        <input type="password" name="" id="password-login" required>
+        <button class="btn btn-primary login-button">Login</button>
+        <button class="btn btn-danger close-button">Close</button>
+      </div>
+      <div class="register-form">
+        <label for="register-username">Username:</label>
+        <input type="text" name="" id="register-username">
+        <label for="register-password">Password:</label>
+        <input type="password" name="" id="register-password">
+        <label for="register-name">Name:</label>
+        <input type="text" name="" id="register-name">
+        <label for="register-email">Email:</label>
+        <input type="email" name="" id="register-email">
+        <label for="register-image">Image:</label>
+        <input type="file" id="register-image">
+        <button class="btn btn-primary register-button">Register</button>
+        <button class="btn btn-danger close-button">Close</button>
+      </div>
+      <div class="create-post-form">
+        <label for="create-post-title">Title:</label>
+        <input type="text" name="" id="create-post-title">
+        <textarea  id="create-post-body" ></textarea>
+        <label for="create-post-image">Image:</label>
+        <input type="file" id="create-post-image">
+        <button class="btn btn-primary create-button">Create Post</button>
+        <button class="btn btn-danger close-button">Close</button>
+      </div>
+      <div class="edit-form">
+        <label for="edit-post-title">Title:</label>
+        <input type="text" name="" id="edit-post-title">
+        <textarea id="edit-post-body"></textarea>
+        <label for="edit-post-image">Image:</label>
+        <input type="file" id="edit-post-image">
+        <button class="btn btn-primary edit-button">Edit Post</button>
+        <button class="btn btn-danger close-button">Close</button>
+      </div>
+  </div>
+
+  <div class="container">
+    <div class="heading bg-white d-flex p-2 align-items-center rounded shadow fw-bold ">
+      <div class="logo flex-fill">LOGO</div>
+      <ul class="links d-flex gap-5 flex-fill m-0">
+        <li class="active"><a href="#" class="text-decoration-none">Home</a></li>
+        <li><a href="#" class="text-decoration-none text-secondary">Profile</a></li>
+      </ul>
+      <div class="buttons flex-fil flex-end">
+        <button class="btn btn-outline-primary login">Login</button>
+        <button class="btn btn-outline-primary register">Register</button>
+        <div class="logout-prop">
+          <img src="" alt="" class="person-image">
+          <p class="person-name"></p>
+          <button class="btn btn-outline-danger logout">Logout</button>
+        </div>
+      </div>
+    </div>
+    <div class="posts-container mt-5 ">
+      <!-- <div class="post-box bg-white rounded shadow ">
+        <div class="person-info d-flex">
+          <img src="images/man_4202843.png" alt="" class="rounded-circle">
+          <div class="user-name">ahmedboghdady55</div>
+          
+        </div>
+        <div class="post-body">
+          <div class="post-image">
+            <img src="images/01.jpg" alt="">
+          </div>
+          <div class="post-content">
+            <span class="post-time">1 day ago</span>
+            <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ab harum inventore nesciunt. Maxime voluptate culpa odit itaque alias asperiores blanditiis, excepturi quasi distinctio voluptas, possimus similique sed iusto a.</p>
+          </div>
+          <div class="comments">
+            <i class="fa-regular fa-comments"></i>
+            <span>(3) Comments</span> 
+            <span class="tags rounded">Social</span>
+          </div>
+        </div>
+      </div>
+      <div class="post-box bg-white rounded shadow ">
+        <div class="person-info d-flex">
+          <img src="images/man_4202843.png" alt="" class="rounded-circle">
+          <div class="user-name">ahmedboghdady55</div>
+        </div>
+        <div class="post-body">
+          <div class="post-image">
+            <img src="images/01.jpg" alt="">
+          </div>
+          <div class="post-content">
+            <span class="post-time">1 day ago</span>
+            <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ab harum inventore nesciunt.
+              Maxime voluptate culpa odit itaque alias asperiores blanditiis, excepturi quasi distinctio voluptas, possimus
+              similique sed iusto a.</p>
+          </div>
+          <div class="comments">
+            <i class="fa-regular fa-comments"></i>
+            <span>(3) Comments</span>
+            <span class="tags rounded">Social</span>
+          </div>
+        </div>
+      </div>
+      <div class="post-box bg-white rounded shadow ">
+        <div class="person-info d-flex">
+          <img src="images/man_4202843.png" alt="" class="rounded-circle">
+          <div class="user-name">ahmedboghdady55</div>
+        </div>
+        <div class="post-body">
+          <div class="post-image">
+            <img src="images/01.jpg" alt="">
+          </div>
+          <div class="post-content">
+            <span class="post-time">1 day ago</span>
+            <h6 class="post-title">Title</h6>
+            <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ab harum inventore nesciunt.
+              Maxime voluptate culpa odit itaque alias asperiores blanditiis, excepturi quasi distinctio voluptas, possimus
+              similique sed iusto a.</p>
+          </div>
+          <div class="comments">
+            <i class="fa-regular fa-comments"></i>
+            <span>(3) Comments</span>
+            <span class="tags rounded">Social</span>
+          </div>
+        </div>
+      </div>
+      <div class="post-box bg-white rounded shadow ">
+        <div class="person-info d-flex">
+          <img src="images/man_4202843.png" alt="" class="rounded-circle">
+          <div class="user-name">ahmedboghdady55</div>
+        </div>
+        <div class="post-body">
+          <div class="post-image">
+            <img src="images/01.jpg" alt="">
+          </div>
+          <div class="post-content">
+            <span class="post-time">1 day ago</span>
+            <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ab harum inventore nesciunt.
+              Maxime voluptate culpa odit itaque alias asperiores blanditiis, excepturi quasi distinctio voluptas, possimus
+              similique sed iusto a.</p>
+          </div>
+          <div class="comments">
+            <i class="fa-regular fa-comments"></i>
+            <span>(3) Comments</span>
+            <span class="tags rounded">Social</span>
+          </div>
+        </div>
+      </div>
+      <div class="post-box bg-white rounded shadow ">
+        <div class="person-info d-flex">
+          <img src="images/man_4202843.png" alt="" class="rounded-circle">
+          <div class="user-name">ahmedboghdady55</div>
+        </div>
+        <div class="post-body">
+          <div class="post-image">
+            <img src="images/01.jpg" alt="">
+          </div>
+          <div class="post-content">
+            <span class="post-time">1 day ago</span>
+            <p class="post-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ab harum inventore nesciunt.
+              Maxime voluptate culpa odit itaque alias asperiores blanditiis, excepturi quasi distinctio voluptas, possimus
+              similique sed iusto a.</p>
+          </div>
+          <div class="comments">
+            <i class="fa-regular fa-comments"></i>
+            <span>(3) Comments</span>
+            <span class="tags rounded">Social</span>
+          </div>
+        </div>
+      </div> -->
+      
+
+    </div>
+    <div class="add-post-button bg-primary">
+      +
+    </div>
+
+  </div>
+
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
